@@ -1,1 +1,32 @@
-# javascript-calculator-precourse
+# **javascript-calculator-precourse**
+
+## 기능 목록
+
+### 입력
+
+- [ ] 문자열 입력 값 저장 → 검증
+
+### 검증
+
+- [ ] 입력 값 커스텀 구분자 확인
+  - [ ] 커스텀 구분자 맞을 시 정규 패턴식에 추가
+  - [ ] 아닐 시 [ERROR] 발생
+- [ ] 입력 값 길이 확인 → 출력 값 0
+- [ ] 숫자 양수인지 판별
+  - [ ] 음수 일 시 [ERROR] 발생
+
+### 오류 처리
+
+- [ ] [ERROR] 메세지와 함께 ERROR 발생
+
+### 연산
+
+- [ ] 숫자 배열을 인자로 받아서 연산 후 값 출력하기
+
+### 출력
+
+- [ ] `결과 : $결과값` 형태로 출력하기
+
+### 초기 기능 로직 플로우차트
+
+<img width="936" height="1089" alt="Untitled-2025-10-14-2024" src="https://github.com/user-attachments/assets/05d8f434-2d04-494f-962e-06a27769d892" />
