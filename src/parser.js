@@ -1,10 +1,13 @@
-import { REGEX_FIND_DELIMITER, DEFAULT_DELIMITERS } from "./constants.js";
+import { DEFAULT_DELIMITERS } from "./constants.js";
 
 export function parser(input) {
-  if (REGEX_FIND_DELIMITER.test(input)) {
-    const NEW_DELIMITER = REGEX_FIND_DELIMITER.exec(input).slice(1, 3);
-    DEFAULT_DELIMITERS += NEW_DELIMITER;
+  let DELIMITER = DEFAULT_DELIMITERS;
+  let INPUT = input;
+  if (input.slice(0, 2) === "//" && input.slice(3, 5) === "\\n") {
+    const NEW_DELIMITER = input.slice(2, 3);
+    DELIMITER += NEW_DELIMITER;
+    INPUT = input.slice(5);
   }
-  const REGEX_FIND_NUMBERS = new RegExp(`[${DEFAULT_DELIMITERS}]`);
-  return input.split(REGEX_FIND_NUMBERS);
+  const REGEX_FIND_NUMBERS = new RegExp(`[${DELIMITER}]`);
+  return INPUT.split(REGEX_FIND_NUMBERS);
 }
