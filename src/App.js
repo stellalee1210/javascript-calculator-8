@@ -1,6 +1,6 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 import { validator } from "./validator.js";
-
+import { add } from "./calculator.js";
 class App {
   async run() {
     try {
@@ -9,7 +9,7 @@ class App {
       );
       const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(USER_INPUT);
       if (IS_INPUT_VALID) {
-        Console.Print(calculate(VALIDATION_RESULT));
+        Console.Print(add(VALIDATION_RESULT));
         return;
       }
       Console.Print(VALIDATION_RESULT);
