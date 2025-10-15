@@ -1,7 +1,7 @@
-import { REGEX, DEFAULT_DELIMITERS } from "./constants.js";
+import { REGEX_FIND_DELIMITER, DEFAULT_DELIMITERS } from "./constants.js";
 
 export function parser(input) {
-  if (REGEX.test(input)) {
+  if (REGEX_FIND_DELIMITER.test(input)) {
     const NEW_DELIMITER = REGEX_FIND_DELIMITER.exec(input).slice(1, 3);
     DEFAULT_DELIMITERS += NEW_DELIMITER;
   }

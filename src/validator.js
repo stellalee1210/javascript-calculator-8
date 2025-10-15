@@ -1,4 +1,4 @@
-import { REGEX, ERROR_MESSAGE } from "./constants.js";
+import { ERROR_MESSAGE } from "./constants.js";
 import { parser } from "./parser.js";
 
 export function validator(input) {
