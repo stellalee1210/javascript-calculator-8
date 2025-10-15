@@ -7,11 +7,11 @@ export function validator(input) {
     (item) => typeof item === Number
   );
 
-  if (input.length === 0) return 0;
+  if (input.length === 0) return [false, 0];
   if (
     PARSED_INPUT_ARRAY.length > 0 &&
     PARSED_INPUT_ARRAY.length === FILTERED_INPUT_ARRAY.length
   )
-    return true;
-  return ERROR_MESSAGE;
+    return [true, PARSED_INPUT_ARRAY];
+  return [false, ERROR_MESSAGE];
 }
