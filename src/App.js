@@ -16,7 +16,7 @@ class App {
       Console.print(VALIDATION_RESULT);
     } catch (error) {
       MissionUtils.Console.print("Error");
-      //MissionUtils.Console.print(error);
+      MissionUtils.Console.print(error);
     }
   }
 }

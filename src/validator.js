@@ -4,7 +4,7 @@ import { parser } from "./parser.js";
 export function validator(input) {
   const PARSED_INPUT_ARRAY = parser(input);
   const FILTERED_INPUT_ARRAY = PARSED_INPUT_ARRAY.filter(
-    (item) => typeof item === Number
+    (item) => !isNaN(item) && Number(item) > 0
   );
 
   if (input.length === 0) return [false, 0];
