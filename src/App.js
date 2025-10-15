@@ -7,16 +7,14 @@ class App {
       const USER_INPUT = await MissionUtils.Console.readLineAsync(
         "덧셈할 문자열을 입력해 주세요.\n"
       );
-      MissionUtils.Console.print(USER_INPUT);
       const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(USER_INPUT);
       if (IS_INPUT_VALID) {
-        Console.print(add(VALIDATION_RESULT));
-        return;
+        Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
+      } else {
+        throw new Error(`[ERROR]`);
       }
-      Console.print(VALIDATION_RESULT);
     } catch (error) {
-      MissionUtils.Console.print("Error");
-      MissionUtils.Console.print(error);
+      Console.print(`${error}`);
     }
   }
 }
