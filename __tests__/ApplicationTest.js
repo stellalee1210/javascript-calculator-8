@@ -133,4 +133,19 @@ describe("문자열 계산기", () => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
     });
   });
+
+  test("예외 테스트 : 커스텀 구분자 형식이 여러 개 반복되는 경우", async () => {
+    const inputs = ["//!\\n//?\\n//#\\n4!8?2#6;10"];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["30"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
