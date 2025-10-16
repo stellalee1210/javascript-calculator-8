@@ -1,7 +1,4 @@
-import {
-  DEFAULT_ERROR_MESSAGE,
-  BLANK_INPUT_ERROR_MESSAGE,
-} from "./constants.js";
+import { BLANK_INPUT_ERROR_MESSAGE } from "./constants.js";
 
 import { parser } from "./parser.js";
 

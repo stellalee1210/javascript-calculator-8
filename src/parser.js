@@ -1,18 +1,21 @@
-import {
-  DEFAULT_DELIMITERS,
-  DELIMITER_REGEX,
-  BLANK_DELIMITER_REGEX,
-} from "./constants.js";
+import { DEFAULT_DELIMITERS, DELIMITER_REGEX } from "./constants.js";
+
+function get_custom_delimiter(str) {
+  const SLICED_DELIMITERS = str.slice(2, str.length - 2);
+  return [...SLICED_DELIMITERS]
+    .filter((delimiter) => !DEFAULT_DELIMITERS.includes(delimiter))
+    .join("");
+}
 
 export function parser(input) {
   let DELIMITER = DEFAULT_DELIMITERS;
   let INPUT = input;
+
   if (DELIMITER_REGEX.test(INPUT)) {
-    const NEW_DELIMITER = input.slice(2, 3);
-    DELIMITER += NEW_DELIMITER;
-    INPUT = input.slice(5);
+    const RAW_DELIMITER = DELIMITER_REGEX.exec(INPUT)[0];
+    DELIMITER += get_custom_delimiter(RAW_DELIMITER);
+    INPUT = input.slice(RAW_DELIMITER.length);
   }
-  if (BLANK_DELIMITER_REGEX.test(INPUT)) INPUT = input.slice(4);
 
   const REGEX_FIND_NUMBERS = new RegExp(`[${DELIMITER}]`);
   return INPUT.split(REGEX_FIND_NUMBERS);
