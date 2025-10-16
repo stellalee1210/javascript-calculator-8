@@ -11,7 +11,7 @@ export function validator(input) {
   const USER_INPUT = input.trim();
   const PARSED_INPUT_ARRAY = parser(USER_INPUT);
   const FILTERED_INPUT_ARRAY = PARSED_INPUT_ARRAY.filter(
-    (item) => !isNaN(item) && Number(item) > 0
+    (item) => Number(item) > 0 && Number.isInteger(Number(item))
   );
 
   if (
