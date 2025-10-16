@@ -40,4 +40,19 @@ describe("문자열 계산기", () => {
 
     await expect(app.run()).rejects.toThrow("[ERROR]");
   });
+
+  test("예외 테스트 : 입력값 공백", async () => {
+    const inputs = [""];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["0"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
