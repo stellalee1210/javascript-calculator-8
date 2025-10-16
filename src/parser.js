@@ -12,6 +12,7 @@ export function parser(input) {
     DELIMITER += NEW_DELIMITER;
     INPUT = input.slice(5);
   }
+  if (BLANK_DELIMITER_REGEX.test(INPUT)) INPUT = input.slice(4);
 
   const REGEX_FIND_NUMBERS = new RegExp(`[${DELIMITER}]`);
   return INPUT.split(REGEX_FIND_NUMBERS);
