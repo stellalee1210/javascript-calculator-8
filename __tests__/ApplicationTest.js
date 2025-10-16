@@ -73,4 +73,34 @@ describe("문자열 계산기", () => {
 
     await expect(app.run()).rejects.toThrow("[ERROR]");
   });
+
+  test("예외 테스트 : 입력 값 사이에 공백 1", async () => {
+    const inputs = ["4 ; 5,2"];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["11"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
+
+  test("예외 테스트 : 입력 값 사이에 공백 1", async () => {
+    const inputs = ["//h\\n4 ; 5 h2 ,1"];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["12"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
