@@ -15,9 +15,11 @@ class App {
       if (IS_INPUT_VALID)
         return Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
     } catch (error) {
-      if (error.message === BLANK_INPUT_ERROR_MESSAGE) Console.print("0");
-      if (error.message === DEFAULT_ERROR_MESSAGE)
-        throw Error(DEFAULT_ERROR_MESSAGE);
+      if (error.message === BLANK_INPUT_ERROR_MESSAGE) {
+        Console.print("0");
+        return;
+      }
+      throw Error(DEFAULT_ERROR_MESSAGE);
     }
   }
 }

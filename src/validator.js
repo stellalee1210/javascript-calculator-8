@@ -19,5 +19,5 @@ export function validator(input) {
     PARSED_INPUT_ARRAY.length === FILTERED_INPUT_ARRAY.length
   )
     return [true, PARSED_INPUT_ARRAY];
-  throw Error(DEFAULT_ERROR_MESSAGE);
+  throw Error();
 }
