@@ -57,11 +57,10 @@ describe("문자열 계산기", () => {
   });
 
   test("예외 테스트 : 입력 값에 커스텀 구분자 외에 다른 문자", async () => {
-    const inputs = ["//d\n2d3,8g7"];
+    const inputs = ["//d\\n2d3,8g7"];
     mockQuestions(inputs);
 
     const app = new App();
-    await app.run();
 
     await expect(app.run()).rejects.toThrow("[ERROR]");
   });
@@ -71,7 +70,6 @@ describe("문자열 계산기", () => {
     mockQuestions(inputs);
 
     const app = new App();
-    await app.run();
 
     await expect(app.run()).rejects.toThrow("[ERROR]");
   });
