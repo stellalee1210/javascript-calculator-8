@@ -1,7 +1,10 @@
 import { Console, MissionUtils } from "@woowacourse/mission-utils";
 import { validator } from "./validator.js";
 import { add } from "./calculator.js";
-import { ERROR_MESSAGE } from "./constants.js";
+import {
+  DEFAULT_ERROR_MESSAGE,
+  BLANK_INPUT_ERROR_MESSAGE,
+} from "./constants.js";
 class App {
   async run() {
     try {
@@ -12,7 +15,9 @@ class App {
       if (IS_INPUT_VALID)
         return Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
     } catch (error) {
-      throw Error(ERROR_MESSAGE);
+      if (error.message === BLANK_INPUT_ERROR_MESSAGE) Console.print("0");
+      if (error.message === DEFAULT_ERROR_MESSAGE)
+        throw Error(DEFAULT_ERROR_MESSAGE);
     }
   }
 }
