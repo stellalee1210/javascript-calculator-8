@@ -118,4 +118,19 @@ describe("문자열 계산기", () => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
     });
   });
+
+  test("예외 테스트 : 여러 개의 커스텀 구분자가 연속으로 들어있는 경우", async () => {
+    const inputs = ["//s.!$\\n4s8.2$6"];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["20"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
