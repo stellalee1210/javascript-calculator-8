@@ -60,8 +60,15 @@ describe("문자열 계산기", () => {
     const inputs = ["//d\n2d3,8g7"];
     mockQuestions(inputs);
 
-    const logSpy = getLogSpy();
-    const outputs = ["0"];
+    const app = new App();
+    await app.run();
+
+    await expect(app.run()).rejects.toThrow("[ERROR]");
+  });
+
+  test("예외 테스트 : 소수 값 입력", async () => {
+    const inputs = ["4;3.5,2.5"];
+    mockQuestions(inputs);
 
     const app = new App();
     await app.run();
