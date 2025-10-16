@@ -1,6 +1,7 @@
 import { Console, MissionUtils } from "@woowacourse/mission-utils";
 import { validator } from "./validator.js";
 import { add } from "./calculator.js";
+import { ERROR_MESSAGE } from "./constants.js";
 class App {
   async run() {
     try {
@@ -8,13 +9,11 @@ class App {
         "덧셈할 문자열을 입력해 주세요.\n"
       );
       const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(USER_INPUT);
-      if (IS_INPUT_VALID) {
-        Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
-      } else {
-        throw new Error(`[ERROR]`);
-      }
+      if (IS_INPUT_VALID)
+        return Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
+      throw Error;
     } catch (error) {
-      Console.print(`${error}`);
+      throw Error(ERROR_MESSAGE);
     }
   }
 }
