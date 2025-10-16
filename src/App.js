@@ -11,7 +11,6 @@ class App {
       const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(USER_INPUT);
       if (IS_INPUT_VALID)
         return Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
-      throw Error;
     } catch (error) {
       throw Error(ERROR_MESSAGE);
     }
