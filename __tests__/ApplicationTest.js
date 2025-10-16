@@ -104,7 +104,7 @@ describe("문자열 계산기", () => {
     });
   });
 
-  test("예외 테스트 : 입력 값 사이에 공백 1", async () => {
+  test("예외 테스트 : 커스텀 구분자 비어 있는 경우", async () => {
     const inputs = ["//\\n8;2,5"];
     mockQuestions(inputs);
 
