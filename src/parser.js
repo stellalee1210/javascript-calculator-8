@@ -10,10 +10,10 @@ function get_custom_delimiter(str) {
     .replaceAll(FRONT_PART_REGEX, "")
     .replaceAll(BACK_PART_REGEX, " ")
     .trim()
-    .split(" ");
-  const result = FORMATTED_DELIMITERS.join("");
-  if (!result.includes("\\")) return result;
-  throw Error();
+    .split(" ")
+    .join("");
+  if (FORMATTED_DELIMITERS.includes("\\")) throw Error();
+  return FORMATTED_DELIMITERS;
 }
 
 export function parser(input) {
@@ -25,6 +25,6 @@ export function parser(input) {
     DELIMITER += get_custom_delimiter(RAW_DELIMITER);
     INPUT = input.slice(RAW_DELIMITER.length);
   }
-  Console.print(INPUT);
+
   return INPUT.split(RegExp(`[${DELIMITER}]`));
 }
