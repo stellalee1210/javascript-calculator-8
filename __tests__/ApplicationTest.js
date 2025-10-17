@@ -148,4 +148,19 @@ describe("문자열 계산기", () => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
     });
   });
+
+  test("예외 테스트 : 커스텀 구분자로 /가 들어간 경우 ", async () => {
+    const inputs = ["///\\n//u\\n3/4u5/2;5"];
+    mockQuestions(inputs);
+
+    const logSpy = getLogSpy();
+    const outputs = ["19"];
+
+    const app = new App();
+    await app.run();
+
+    outputs.forEach((output) => {
+      expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
+    });
+  });
 });
