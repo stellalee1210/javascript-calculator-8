@@ -4,4 +4,4 @@ export const DEFAULT_DELIMITERS = `,;`;
 
 export const DELIMITER_REGEX = new RegExp("^//.*\\\\n");
 export const FRONT_PART_REGEX = "//";
-export const BACK_PART_REGEX = "\\\\n";
+export const BACK_PART_REGEX = "\\n";
