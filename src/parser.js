@@ -1,10 +1,17 @@
-import { DEFAULT_DELIMITERS, DELIMITER_REGEX } from "./constants.js";
+import {
+  DEFAULT_DELIMITERS,
+  DELIMITER_REGEX,
+  FRONT_PART_REGEX,
+  BACK_PART_REGEX,
+} from "./constants.js";
 
 function get_custom_delimiter(str) {
-  const SLICED_DELIMITERS = str.slice(2, str.length - 2);
-  return [...SLICED_DELIMITERS]
-    .filter((delimiter) => !DEFAULT_DELIMITERS.includes(delimiter))
-    .join("");
+  const FORMATTED_DELIMITERS = str
+    .replaceAll(FRONT_PART_REGEX, "")
+    .replaceAll(BACK_PART_REGEX, " ")
+    .trim()
+    .split(" ");
+  return FORMATTED_DELIMITERS.join("");
 }
 
 export function parser(input) {
@@ -17,6 +24,5 @@ export function parser(input) {
     INPUT = input.slice(RAW_DELIMITER.length);
   }
 
-  const REGEX_FIND_NUMBERS = new RegExp(`[${DELIMITER}]`);
-  return INPUT.split(REGEX_FIND_NUMBERS);
+  return INPUT.split(RegExp(`[${DELIMITER}]`));
 }
