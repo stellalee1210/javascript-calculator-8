@@ -163,4 +163,12 @@ describe("문자열 계산기", () => {
       expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(output));
     });
   });
+
+  test("예외 테스트 : 커스텀 구분자로 \\가 들어간 경우 ", async () => {
+    const inputs = ["//\\\\n3\\4u5\\2;5"];
+    mockQuestions(inputs);
+
+    const app = new App();
+    await expect(app.run()).rejects.toThrow("[ERROR]");
+  });
 });
