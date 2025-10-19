@@ -1,7 +1,10 @@
 import { Console, MissionUtils } from "@woowacourse/mission-utils";
 import { validator } from "./validator.js";
 import { add } from "./calculator.js";
-import { ERROR_INVALID_INPUT_BLANK } from "./constants.js";
+import {
+  DEFAULT_ERROR_MESSAGE,
+  ERROR_INVALID_INPUT_BLANK,
+} from "./constants.js";
 class App {
   async run() {
     try {
@@ -15,7 +18,11 @@ class App {
       if (error.message === ERROR_INVALID_INPUT_BLANK) {
         Console.print("0");
         return;
-      } else throw Error(error.message);
+      }
+      throw Error(
+        error.message ||
+          `${DEFAULT_ERROR_MESSAGE} : 알 수 없는 에러입니다. 입출력 형식을 지켜서 다시 입력해주십시오.\n 기본 구분자 : , ;\n 커스텀 구분자 : //[구분자]\\n`
+      );
     }
   }
 }
