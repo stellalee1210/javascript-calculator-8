@@ -8,10 +8,10 @@ import {
 class App {
   async run() {
     try {
-      const USER_INPUT = await MissionUtils.Console.readLineAsync(
+      const userInput = await MissionUtils.Console.readLineAsync(
         "덧셈할 문자열을 입력해 주세요.\n"
       );
-      const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(USER_INPUT);
+      const [IS_INPUT_VALID, VALIDATION_RESULT] = validator(userInput);
       if (IS_INPUT_VALID)
         return Console.print(`결과 : ${add(VALIDATION_RESULT)}`);
     } catch (error) {
