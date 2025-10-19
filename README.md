@@ -25,14 +25,23 @@
 - calculator.js : 숫자 연산
   - [x] 숫자 배열을 인자로 받아서 reduce로 연산
 - contants.js : 사용되는 상수 값 모음
+- 
   `DEFAULT_ERROR_MESSAGE` : 기본 에러 → [ERROR]
+  
   `ERROR_INVALID_INPUT_BLANK` : 입력 값 없음 에러 → 0 출력
+  
   `ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER` : 입력값이 양인 정수가 아닌 에러
+  
   `ERROR_INVALID_DELIMITER` : 올바른 커스텀 구분자가 아니거나, 문자가 잘못 들어간 경우 에러
+  
   `DEFAULT_DELIMITERS` : 기본 구분자 → `,;`
+  
   `DELIMITER_REGEX` : 커스텀 구분자 추출 정규표현식 → `//[구분자]\n`
+  
   `FRONT_PART_REGEX` : 커스텀 구분자의 앞 부분 → `//`
+
   `BACK_PART_REGEX` : 커스텀 구분자의 뒤 부분 → `\\n`
+  
 - index.js : 프로그램 시작점, App.js 실행
 
 - parser.js : 문자열 계산 가능한 형태로 가공
@@ -98,4 +107,6 @@ node src/index.js
    커스텀 구분자 : //[구분자 입력]\n : //d\n4,6;2d8 -> 숫자 4,6,2,8이 들어감
    ```
 
-1. 만약 입력 값이 올바르다면 입력 값들을 모두 더한 값을 출력 받을 수 있으며, 아닐 시 `[ERROR]` 가 출력됩니다. 아무 것도 입력하지 않으면 `0` 이 출력됩니다.
+2. 만약 입력 값이 올바르다면 입력 값들을 모두 더한 값을 출력 받을 수 있으며, 아닐 시 오류 상황에 맞는 `[ERROR]` 가 출력됩니다. 아무 것도 입력하지 않으면 `0` 이 출력됩니다.
+
+3. 이 밖의 문제가 생긴다면 언제든지 편하게 알려주시면 감사하겠습니다!
