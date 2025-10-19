@@ -26,7 +26,9 @@
   - [x] 숫자 배열을 인자로 받아서 reduce로 연산
 - contants.js : 사용되는 상수 값 모음
   `DEFAULT_ERROR_MESSAGE` : 기본 에러 → [ERROR]
-  `BLANK_INPUT_ERROR_MESSAGE` : 입력 값 없음 에러 → 0 출력
+  `ERROR_INVALID_INPUT_BLANK` : 입력 값 없음 에러 → 0 출력
+  `ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER` : 입력값이 양인 정수가 아닌 에러
+  `ERROR_INVALID_DELIMITER` : 올바른 커스텀 구분자가 아니거나, 문자가 잘못 들어간 경우 에러
   `DEFAULT_DELIMITERS` : 기본 구분자 → `,;`
   `DELIMITER_REGEX` : 커스텀 구분자 추출 정규표현식 → `//[구분자]\n`
   `FRONT_PART_REGEX` : 커스텀 구분자의 앞 부분 → `//`
@@ -47,8 +49,8 @@
 ### 추가 테스트 케이스 : _tests_/ApplicationTest.js
 
 - [x] 입력 값이 공백인 경우 → 0 출력
-- [x] 입력값에 커스텀구분자 없이 기본 구분자가 아닌 다른 기호로 구분자가 들어 있는 경우 → 에러
-- [x] 입력 값으로 소수점이 들어 온 경우 → 에러
+- [x] 입력값에 커스텀구분자 없이 기본 구분자가 아닌 다른 기호로 구분자가 들어 있는 경우 → `ERROR_INVALID_DELIMITER`
+- [x] 입력 값으로 소수점이 들어 온 경우 → `ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER`
 - [x] 올바른 입력 값 사이에 공백이 있는 경우 → 정상 작동
   - [x] 기본 구분자
   - [x] 커스텀 구분자
@@ -56,7 +58,7 @@
 - [x] 커스텀 구분자가 여러 개 들어간 경우 → 구분자 여러 개로 간주하고 정상 작동
   - [x] 커스텀 구분자 이미 존재하는지 확인하는 로직 추가
 - [x] 커스텀 구분자를 하나씩 여러개 넣은 경우 → 구분자 여러 개로 간주하고 정상 작동
-- [x] 커스텀 구분자로 `/` 가 들어 간 경우 → 에러
+- [x] 커스텀 구분자로 `/` 가 들어 간 경우 → `ERROR_INVALID_DELIMITER`
 
 ### 예외 처리
 
