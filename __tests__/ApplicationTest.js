@@ -1,5 +1,9 @@
 import App from "../src/App.js";
 import { MissionUtils } from "@woowacourse/mission-utils";
+import {
+  ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER,
+  ERROR_INVALID_DELIMITER,
+} from "../src/constants.js";
 
 const mockQuestions = (inputs) => {
   MissionUtils.Console.readLineAsync = jest.fn();
@@ -38,7 +42,9 @@ describe("문자열 계산기", () => {
 
     const app = new App();
 
-    await expect(app.run()).rejects.toThrow("[ERROR]");
+    await expect(app.run()).rejects.toThrow(
+      ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER
+    );
   });
 
   test("예외 테스트 : 입력값 공백", async () => {
@@ -62,7 +68,7 @@ describe("문자열 계산기", () => {
 
     const app = new App();
 
-    await expect(app.run()).rejects.toThrow("[ERROR]");
+    await expect(app.run()).rejects.toThrow(ERROR_INVALID_DELIMITER);
   });
 
   test("예외 테스트 : 소수 값 입력", async () => {
@@ -71,7 +77,9 @@ describe("문자열 계산기", () => {
 
     const app = new App();
 
-    await expect(app.run()).rejects.toThrow("[ERROR]");
+    await expect(app.run()).rejects.toThrow(
+      ERROR_INVALID_INPUT_NOT_POSITIVE_INTEGER
+    );
   });
 
   test("예외 테스트 : 입력 값 사이에 공백 1", async () => {
@@ -169,6 +177,6 @@ describe("문자열 계산기", () => {
     mockQuestions(inputs);
 
     const app = new App();
-    await expect(app.run()).rejects.toThrow("[ERROR]");
+    await expect(app.run()).rejects.toThrow(ERROR_INVALID_DELIMITER);
   });
 });
