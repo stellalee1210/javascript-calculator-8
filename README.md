@@ -1,4 +1,6 @@
 # 문자열 덧셈 계산기
+[미션 빌딩 과정 및 느낀 점](https://www.notion.so/28f49092ab7480b7bb0dff637b403bb6?source=copy_link)을 노션에 별도로 정리해놓았습니다! 
+
 
 ## 프로그램 설명
 
