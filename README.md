@@ -1,6 +1,6 @@
 # 문자열 덧셈 계산기
-[미션 빌딩 과정 및 느낀 점](https://www.notion.so/28f49092ab7480b7bb0dff637b403bb6?source=copy_link)을 노션에 별도로 정리해놓았습니다! 
-
+[미션 빌딩 과정 및 느낀 점](https://www.notion.so/28f49092ab7480b7bb0dff637b403bb6?source=copy_link)은 노션에 별도로 정리해놓았습니다! 
+[프리코스 1주차 회고](https://velog.io/@camellia/%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC%EC%BD%94%EC%8A%A4-8%EA%B8%B0-%ED%94%84%EB%A6%AC%EC%BD%94%EC%8A%A4-1%EC%A3%BC%EC%B0%A8-%EB%AF%B8%EC%85%98-%ED%9A%8C%EA%B3%A0)는 벨로그에 업로드 해놓았습니다!
 
 ## 프로그램 설명
 
